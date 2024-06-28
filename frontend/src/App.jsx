@@ -16,6 +16,21 @@ const photoInfo = {
 
 
 const App = () => {
+  const photoInfos = new Array(3)
+
+
+  for(let i = 0 ; i < 3 ; i++){
+    photoInfos[i]= []
+  }
+  for(let i = 0 ; i < 3 ; i++){
+    photoInfos[i].push(photoInfo)
+  }
+  console.log("this is photo array:",photoInfos)
+
+  const multiPhotoInfos = photoInfos.map(item => {
+    
+
+  })
   return (
     <div className="App">
       <PhotoListItem photoInfo = {photoInfo} />
