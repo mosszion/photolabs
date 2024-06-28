@@ -61,9 +61,9 @@ const PhotoList = () => {
    
 
 
-  const multiPhotoInfos = photoInfo.map((photoInf,index) => {
+  const multiPhotoInfos = photoInfo.map((photoInfo,index) => {
     return (
-            <PhotoListItem key = {index} photoInf={photoInf} 
+            <PhotoListItem key = {index} photoInfo={photoInfo} 
             />
            
           
