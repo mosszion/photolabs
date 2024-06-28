@@ -10,7 +10,7 @@ const TopNavigation = () => {
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span> 
       <TopicList />
-      <span className='fav-badge'><span className='fav-badge__count'></span><FavBadge isFavPhotoExist={isFavPhotoExist ? true :}/></span>
+      <span className='fav-badge'><span className='fav-badge__count'></span><FavBadge isFavPhotoExist={isFavPhotoExist ? true : false}/></span>
     </div>
   )
 }
