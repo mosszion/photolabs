@@ -17,11 +17,10 @@ const photoInfo = {
 
 const App = () => {
   const photoInfos = new Array(3).fill(photoInfo);
-  console.log(photoInfos)
 
 
-  const multiPhotoInfos = photoInfos.map(photoInfo => {
-    return <PhotoListItem key = "id" photoInfo={photoInfo}/>
+  const multiPhotoInfos = photoInfos.map((photoInfo,index) => {
+    return <PhotoListItem key = {index} photoInfo={photoInfo}/>
 
   })
   return (
