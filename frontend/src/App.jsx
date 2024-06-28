@@ -7,6 +7,7 @@ import PhotoFavButton from 'components/PhotoFavButton';
 import PhotoList from 'components/PhotoList';
 import TopicListItem from 'components/TopicListItem';
 import TopicList from 'components/TopicList';
+import TopNavigation from 'components/TopNavigationBar';
  
 
 
@@ -26,6 +27,7 @@ const App = () => {
   return (
     <div className="App">
       {/* {multiPhotoInfos} */}
+      <TopNavigation />
      <TopicList />
       <PhotoList />
       
