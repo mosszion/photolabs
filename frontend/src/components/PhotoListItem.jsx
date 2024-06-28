@@ -19,7 +19,7 @@ const PhotoListItem = ({photoInfo}) => {
     <p>{photoInfo.username}</p>
     <div className="photo-list__user-location">
 
-    <p>{photoInfo.location.city} {photoInfo.location.country}</p>
+    <p>{photoInfo.location.city}, {photoInfo.location.country}</p>
     </div>
 
     </div>
