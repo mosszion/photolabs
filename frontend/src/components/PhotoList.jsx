@@ -1,8 +1,9 @@
 import React from "react";
 
 import "../styles/PhotoList.scss";
+import PhotoListItem from "./PhotoListItem";
 
-const sampleDataForPhotoList = [
+const photoInfo = [
   {
     id: "1",
     location: {
@@ -57,9 +58,22 @@ const sampleDataForPhotoList = [
 ];
 
 const PhotoList = () => {
+   
+
+
+  const multiPhotoInfos = photoInfo.map((photoInf,index) => {
+    return (
+            <PhotoListItem key = {index} photoInf={photoInf} 
+            />
+           
+          
+
+  )})
   return (
     <ul className="photo-list">
       {/* Insert React */}
+      {multiPhotoInfos}
+      
     </ul>
   );
 };
