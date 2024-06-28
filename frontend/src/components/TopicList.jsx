@@ -1,8 +1,9 @@
 import React from "react";
 
 import "../styles/TopicList.scss";
+import TopicListItem from "./TopicListItem";
 
-const sampleDataForTopicList = [
+const dataTopicList = [
   {
     id: "1",
     slug: "topic-1",
@@ -21,9 +22,18 @@ const sampleDataForTopicList = [
 ];
 
 const TopicList = () => {
+
+  const multiTopicList = dataTopicList.map((topic,index) => {
+    return (
+      < TopicListItem key = {index} topic = {topic} />
+    )
+  })
+  
+  console.log(multiTopicList)
   return (
     <div className="top-nav-bar__topic-list">
       {/* Insert React */}
+      {multiTopicList}
     </div>
   );
 };
