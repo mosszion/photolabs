@@ -28,7 +28,7 @@ const App = () => {
     <div className="App">
       {/* {multiPhotoInfos} */}
       <TopNavigation />
-     <TopicList />
+    
       <PhotoList />
       
     </div>
