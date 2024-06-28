@@ -13,12 +13,12 @@ const PhotoListItem = ({photoInfo}) => {
     <div className="photo-list__item">
       <PhotoFavButton/>
 
-    <img className="photo-list__image" src={photoInfo.imageSource}/>
+    <img className="photo-list__image" src={photoInfo.urls.regular}/>
     <div className="photo-list__user-details">
 
-    <img className="photo-list__user-profile" src={photoInfo.profile}/>
+    <img className="photo-list__user-profile" src={photoInfo.user.profile}/>
     <div className="photo-list__user-info">
-    <p>{photoInfo.username}</p>
+    <p>{photoInfo.user.username}</p>
     <div className="photo-list__user-location">
 
     <p>{photoInfo.location.city}, {photoInfo.location.country}</p>
