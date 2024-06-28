@@ -5,7 +5,9 @@ import './App.scss';
 import FavIcon from 'components/FavIcon';
 import PhotoFavButton from 'components/PhotoFavButton';
 import PhotoList from 'components/PhotoList';
-
+import TopicListItem from 'components/TopicListItem';
+import TopicList from 'components/TopicList';
+ 
 
 
 
@@ -24,7 +26,9 @@ const App = () => {
   return (
     <div className="App">
       {/* {multiPhotoInfos} */}
+     <TopicList />
       <PhotoList />
+      
     </div>
   );
 };
