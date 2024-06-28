@@ -23,9 +23,9 @@ const dataTopicList = [
 
 const TopicList = () => {
 
-  const multiTopicList = dataTopicList.map((topic,index) => {
+  const multiTopicList = dataTopicList.map((topic) => {
     return (
-      < TopicListItem key = {index} topic = {topic} />
+      < TopicListItem key = {topic.id} topic = {topic} />
     )
   })
   
