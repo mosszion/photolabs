@@ -22,11 +22,11 @@ const App = () => {
 
 
   const multiPhotoInfos = photoInfos.map((photoInfo,index) => {
-    return (<>
+    return (
             <PhotoListItem key = {index} photoInfo={photoInfo} 
             />
-            <PhotoFavButton key = {index} FavIcon={FavIcon}/>
-           </>
+           
+          
 
   )})
   return (
