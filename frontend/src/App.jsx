@@ -3,7 +3,7 @@ import React from 'react';
 import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
 
-const sampleDataForPhotoListItem = {
+const photoInfo = {
   id: "1",
   location: {
     city: "Montreal",
@@ -18,7 +18,7 @@ const sampleDataForPhotoListItem = {
 const App = () => {
   return (
     <div className="App">
-      <PhotoListItem sampleDataForPhotoListItem = {sampleDataForPhotoListItem} />
+      <PhotoListItem photoInfo = {photoInfo} />
     </div>
   );
 };
