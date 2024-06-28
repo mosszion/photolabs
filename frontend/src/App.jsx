@@ -2,6 +2,8 @@ import React from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
+import FavIcon from 'components/FavIcon';
+import PhotoFavButton from 'components/PhotoFavButton';
 
 const photoInfo = {
   id: "1",
@@ -20,9 +22,13 @@ const App = () => {
 
 
   const multiPhotoInfos = photoInfos.map((photoInfo,index) => {
-    return <PhotoListItem key = {index} photoInfo={photoInfo}/>
+    return (<>
+            <PhotoListItem key = {index} photoInfo={photoInfo} 
+            />
+            <PhotoFavButton key = {index} FavIcon={FavIcon}/>
+           </>
 
-  })
+  )})
   return (
     <div className="App">
       {multiPhotoInfos}
