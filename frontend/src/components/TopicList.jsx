@@ -4,6 +4,7 @@ import "../styles/TopicList.scss";
 import TopicListItem from "./TopicListItem";
 
 
+
 // const dataTopicList = [
 //   {
 //     id: "1",
@@ -25,7 +26,7 @@ import TopicListItem from "./TopicListItem";
 const TopicList = (props) => {
   
 
-  const multiTopicList = topicArray.map((topic) => {
+  const multiTopicList = props.topics.map((topic) => {
     return (
       < TopicListItem key = {topic.id} topic = {topic} />
     )

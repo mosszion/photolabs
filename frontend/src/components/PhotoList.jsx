@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
-import photos from "mocks/photos";
+
 
 // const photoInfo = [
 //   {
@@ -58,11 +58,11 @@ import photos from "mocks/photos";
 //   },
 // ];
 
-const PhotoList = ({photos}) => {
+const PhotoList = (props) => {
    
 
 
-  const multiPhotoInfos = photos.map((photoInfo,index) => {
+  const multiPhotoInfos =props.photos.map((photoInfo,index) => {
     return (
             <PhotoListItem key = {index} photoInfo={photoInfo} 
             />
