@@ -58,7 +58,7 @@ import photos from "mocks/photos";
 //   },
 // ];
 
-const PhotoList = () => {
+const PhotoList = ({photos}) => {
    
 
 
