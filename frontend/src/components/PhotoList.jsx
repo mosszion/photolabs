@@ -12,7 +12,7 @@ const PhotoList = (props) => {
 
   const multiPhotoInfos =props.photos.map((photoInfo,index) => {
     return (
-            <PhotoListItem key = {index} photoInfo={photoInfo} 
+            <PhotoListItem key = {index} photoInfo={photoInfo} selected ={props.selected} toggleSelected ={props.toggleSelected}
             />
            
           

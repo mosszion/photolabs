@@ -7,11 +7,14 @@ import TopicList from './TopicList';
 
 const TopNavigation = (props) => {
   const [isFavPhotoExist, setIsFavPhotoExist] = useState(true)
+  const toggleFavPhotoExist= () => {
+    setIsFavPhotoExist(prev => ! prev)
+  }
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span> 
       <TopicList  topics= {props.topics}/>
-      <span className='fav-badge'><FavBadge className='fav-badge__count' isFavPhotoExist={isFavPhotoExist}/></span>
+      <span className='fav-badge'><FavBadge className='fav-badge__count' isFavPhotoExist={isFavPhotoExist} /></span>
     </div>
   )
 }

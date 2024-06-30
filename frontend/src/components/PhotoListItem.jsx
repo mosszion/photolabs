@@ -5,23 +5,25 @@ import PhotoFavButton from "./PhotoFavButton";
 
 
 
-const PhotoListItem = ({photoInfo}) => {
+const PhotoListItem = (props) => {
+  
 
 
   /* Insert React */
   return (
     <div className="photo-list__item">
-      <PhotoFavButton/>
+      <PhotoFavButton selected ={props.selected} toggleSelected ={props.toggleSelected} />
+      
 
-    <img className="photo-list__image" src={photoInfo.urls.regular}/>
+    <img className="photo-list__image" src={props.photoInfo.urls.regular}/>
     <div className="photo-list__user-details">
 
-    <img className="photo-list__user-profile" src={photoInfo.user.profile}/>
+    <img className="photo-list__user-profile" src={props.photoInfo.user.profile}/>
     <div className="photo-list__user-info">
-    <p>{photoInfo.user.username}</p>
+    <p>{props.photoInfo.user.username}</p>
     <div className="photo-list__user-location">
 
-    <p>{photoInfo.location.city}, {photoInfo.location.country}</p>
+    <p>{props.photoInfo.location.city}, {props.photoInfo.location.country}</p>
     </div>
 
     </div>
