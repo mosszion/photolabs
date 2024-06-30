@@ -10,15 +10,13 @@ import topics from 'mocks/topics';
  
 
 
-const mockPhotoData = [...photos];
-console.log(mockPhotoData)
-const mockTopicData = [...topics];
-console.log(mockTopicData)
 
 const App = () => {
-     
+  
+  const mockPhotoData = [...photos];
+  const mockTopicData = [...topics];
+  
 
-  // )})
   return (
     <div className="App">
  

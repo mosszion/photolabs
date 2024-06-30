@@ -5,25 +5,8 @@ import TopicListItem from "./TopicListItem";
 
 
 
-// const dataTopicList = [
-//   {
-//     id: "1",
-//     slug: "topic-1",
-//     title: "Nature",
-//   },
-//   {
-//     id: "2",
-//     slug: "topic-2",
-//     title: "Travel",
-//   },
-//   {
-//     id: "3",
-//     slug: "topic-3",
-//     title: "People",
-//   },
-// ];
-
 const TopicList = (props) => {
+  
   
 
   const multiTopicList = props.topics.map((topic) => {
@@ -32,7 +15,7 @@ const TopicList = (props) => {
     )
   })
   
-  console.log(multiTopicList)
+
   return (
     <div className="top-nav-bar__topic-list">
       {/* Insert React */}
