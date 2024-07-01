@@ -5,10 +5,17 @@ import TopNavigation from 'components/TopNavigationBar';
 import PhotoList from 'components/PhotoList';
 
 const HomeRoute = (props) => {
-  const [selected, setSelected] = useState(false);
-  const toggleSelected = () => {
-    setSelected(prev => ! prev)
-  }
+  const [favourites, setFavourites] = useState([]);
+
+  const toggleFavourite = (photoId) => {
+    if (favourites.includes(photoId)) {
+      // Photo is already in favourites, so remove it
+      setFavourites(favourites.filter(id => id !== photoId));
+    } else {
+      // Photo is not in favourites, so add it
+      setFavourites([...favourites, photoId]);
+    }
+  };
 
   
   return (
@@ -16,7 +23,7 @@ const HomeRoute = (props) => {
       {/* Insert React */}
       <TopNavigation  topics = {props.topics} />
     
-       <PhotoList photos={props.photos} selected={selected} toggleSelected={toggleSelected}/>
+       <PhotoList photos={props.photos} selected={favourites} toggleSelected={toggleFavourite}/>
     </div>
   );
 };
