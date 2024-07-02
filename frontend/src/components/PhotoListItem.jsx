@@ -12,7 +12,8 @@ const PhotoListItem = (props) => {
   /* Insert React */
   return (
     <div className="photo-list__item">
-      <PhotoFavButton selected ={props.selected} toggleSelected ={props.toggleSelected} />
+      <PhotoFavButton selected ={props.selected} toggleSelected ={props.toggleSelected} favourites={props.favourites} toggleFavourite={props.toggleFavourite} 
+       />
       
 
     <img className="photo-list__image" src={props.photoInfo.urls.regular}/>

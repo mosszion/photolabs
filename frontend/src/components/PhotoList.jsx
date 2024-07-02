@@ -7,12 +7,15 @@ import PhotoListItem from "./PhotoListItem";
 
 
 const PhotoList = (props) => {
-   
+ 
 
 
-  const multiPhotoInfos =props.photos.map((photoInfo,index) => {
+  const multiPhotoInfos =props.photos.map((photoInfo) => {
     return (
-            <PhotoListItem key = {index} photoInfo={photoInfo} selected ={props.selected} toggleSelected ={props.toggleSelected}
+            <PhotoListItem key = {photoInfo.id} photoInfo={photoInfo} 
+            selected={props.selected} toggleSelected={props.toggleSelected} 
+            favourites={props.favourites} toggleFavourite={props.toggleFavourite} 
+       
             />
            
           
