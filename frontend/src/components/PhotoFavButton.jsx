@@ -12,7 +12,7 @@ function PhotoFavButton(props) {
       <div className="photo-list__fav-icon-svg">
         {/* Insert React */}
         <FavIcon onClick = {() => {props.toggleSelected()}} selected = {props.selected} 
-          favourite = {props.favourite}
+        
           />
        
       </div>

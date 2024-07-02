@@ -12,11 +12,11 @@ const HomeRoute = (props) => {
   }
   const [favourites, setFavourites] = useState([]);
 
-  const photoId = props.photos.map((photo) => {
+  
+const toggleFavourite = (photoId) => {
+   photoId = props.photos.map((photo) => {
     return photo.id;
-   
-  }) 
-  const toggleFavourite = (photoId) => {
+    }) 
     
         if (favourites.includes(photoId)) {
           // Photo is already in favourites, so remove it
