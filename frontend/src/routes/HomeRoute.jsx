@@ -12,18 +12,18 @@ const HomeRoute = (props) => {
   }
   const [favourites, setFavourites] = useState([]);
 
-  const toggleFavourite = (props) => {
+  const photoId = props.photos.map((photo) => {
+    return photo.id;
+   
+  }) 
+  const toggleFavourite = (photoId) => {
     
-      const mappedArrayFav = props.photos.map((photo) => {
-        return photo.id;
-       
-      }) 
-        if (favourites.includes(mappedArrayFav)) {
+        if (favourites.includes(photoId)) {
           // Photo is already in favourites, so remove it
-          setFavourites(favourites.filter(id => id !== photo.id));
+          setFavourites(favourites.filter(id => id !== photoId));
         } else {
           // Photo is not in favourites, so add it
-          setFavourites([...favourites,photo.id]);
+          setFavourites([...favourites,photoId]);
         }
         
   };
