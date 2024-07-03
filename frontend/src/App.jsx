@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import './App.scss';
 
@@ -16,14 +16,19 @@ const App = () => {
   
   const mockPhotoData = [...photos];
   const mockTopicData = [...topics];
-  
+  // define display modal state
+
+  const [displayModal, setDisplayModal] = useState(false);
 
   return (
     <div className="App">
    
  
-      <HomeRoute photos= {mockPhotoData} topics= {mockTopicData}/>
-      <PhotoDetailsModal />
+      <HomeRoute 
+          photos= {mockPhotoData} 
+          topics= {mockTopicData} 
+          setDisplayModal ={setDisplayModal}/>
+      {displayModal && <PhotoDetailsModal />}
     </div>
   );
 };
