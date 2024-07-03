@@ -28,7 +28,7 @@ const App = () => {
           photos= {mockPhotoData} 
           topics= {mockTopicData} 
           setDisplayModal ={setDisplayModal}/>
-      {displayModal && <PhotoDetailsModal />}
+      {displayModal && <PhotoDetailsModal setDisplayModal={setDisplayModal}/>}
     </div>
   );
 };
