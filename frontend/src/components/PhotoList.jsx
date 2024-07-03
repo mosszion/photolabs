@@ -13,7 +13,7 @@ const PhotoList = (props) => {
   const multiPhotoInfos =props.photos.map((photoInfo) => {
     return (
             <PhotoListItem key = {photoInfo.id} photoInfo={photoInfo} 
-            selected={props.selected} toggleSelected={props.toggleSelected} 
+            // selected={props.selected} toggleSelected={props.toggleSelected} 
             favourites={props.favourites} toggleFavourite={props.toggleFavourite} 
        
             />

@@ -5,13 +5,19 @@ import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
   console.log(props)
-
+  const selected = props.favourites.includes(props.photoInfoId)
 
   return (
-    <div className="photo-list__fav-icon">
+    
+    <div className="photo-list__fav-icon" onClick = {() => {props.toggleFavourite(props.photoInfoId)}}>
       <div className="photo-list__fav-icon-svg">
+
         {/* Insert React */}
-        <FavIcon onClick = {() => {props.toggleSelected()}} selected = {props.selected} 
+        <FavIcon 
+      
+      
+     
+        selected = {selected} 
         
           />
        

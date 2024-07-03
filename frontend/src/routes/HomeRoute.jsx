@@ -6,17 +6,12 @@ import PhotoList from 'components/PhotoList';
 
 const HomeRoute = (props) => {
 
-  const [selected, setSelected] = useState(false);
-  const toggleSelected = () => {
-      setSelected(prev => ! prev)
-  }
+ 
   const [favourites, setFavourites] = useState([]);
 
   
 const toggleFavourite = (photoId) => {
-   photoId = props.photos.map((photo) => {
-    return photo.id;
-    }) 
+ 
     
         if (favourites.includes(photoId)) {
           // Photo is already in favourites, so remove it
@@ -32,11 +27,11 @@ const toggleFavourite = (photoId) => {
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigation  topics = {props.topics} />
+      <TopNavigation  topics = {props.topics} favourites={favourites}/>
     
        <PhotoList photos={props.photos} 
        favourites={favourites} toggleFavourite={toggleFavourite} 
-       selected={selected} toggleSelected={toggleSelected}
+      //  selected={selected} toggleSelected={toggleSelected}
        />
     </div>
   );

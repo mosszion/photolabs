@@ -6,13 +6,15 @@ import PhotoFavButton from "./PhotoFavButton";
 
 
 const PhotoListItem = (props) => {
-  
 
 
   /* Insert React */
   return (
-    <div className="photo-list__item">
-      <PhotoFavButton selected ={props.selected} toggleSelected ={props.toggleSelected} favourites={props.favourites} toggleFavourite={props.toggleFavourite} 
+    <div className="photo-list__item" key= {props.photoInfo.id}>
+      <PhotoFavButton  
+      photoInfoId = {props.photoInfo.id}
+      favourites={props.favourites} 
+      toggleFavourite={props.toggleFavourite} 
        />
       
 
