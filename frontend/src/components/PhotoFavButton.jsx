@@ -4,7 +4,7 @@ import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
-  console.log(props)
+
   const selected = props.favourites.includes(props.photoInfoId)
 
   return (
