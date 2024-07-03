@@ -29,9 +29,12 @@ const toggleFavourite = (photoId) => {
       {/* Insert React */}
       <TopNavigation  topics = {props.topics} favourites={favourites}/>
     
-       <PhotoList photos={props.photos} 
-       favourites={favourites} toggleFavourite={toggleFavourite} 
-      //  selected={selected} toggleSelected={toggleSelected}
+       <PhotoList 
+            photos={props.photos} 
+            favourites={favourites}  
+            toggleFavourite={toggleFavourite} 
+            setDisplayModal = {props.setDisplayModal}
+   
        />
     </div>
   );

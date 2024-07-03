@@ -12,9 +12,12 @@ const PhotoList = (props) => {
 
   const multiPhotoInfos =props.photos.map((photoInfo) => {
     return (
-            <PhotoListItem key = {photoInfo.id} photoInfo={photoInfo} 
-            // selected={props.selected} toggleSelected={props.toggleSelected} 
-            favourites={props.favourites} toggleFavourite={props.toggleFavourite} 
+            <PhotoListItem 
+                  key = {photoInfo.id} 
+                  photoInfo={photoInfo} 
+                  favourites={props.favourites} 
+                  toggleFavourite={props.toggleFavourite} 
+                  setDisplayModal = {props.setDisplayModal}
        
             />
            
