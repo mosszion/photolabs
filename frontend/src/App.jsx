@@ -19,6 +19,7 @@ const App = () => {
   // define display modal state
 
   const [displayModal, setDisplayModal] = useState(false);
+  const [detail, setDetail] = useState(null)
 
   return (
     <div className="App">
@@ -27,10 +28,13 @@ const App = () => {
       <HomeRoute 
           photos= {mockPhotoData} 
           topics= {mockTopicData} 
-          setDisplayModal ={setDisplayModal}/>
+          setDisplayModal ={setDisplayModal}
+          setDetail={setDetail}
+          />
       {displayModal && <PhotoDetailsModal 
           setDisplayModal={setDisplayModal}
-          photos= {mockPhotoData} 
+          setDetail = {setDetail}
+          
            
       
       />}

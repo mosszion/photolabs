@@ -34,6 +34,7 @@ const toggleFavourite = (photoId) => {
             favourites={favourites}  
             toggleFavourite={toggleFavourite} 
             setDisplayModal = {props.setDisplayModal}
+            setDetail = {props.setDetail}
    
        />
     </div>

@@ -18,7 +18,10 @@ const PhotoListItem = (props) => {
        />
       
 
-    <img className="photo-list__image" src={props.photoInfo.urls.regular} onClick = {() => {props.setDisplayModal(true)}}/>
+    <img className="photo-list__image" src={props.photoInfo.urls.regular} onClick = {() => {
+      props.setDisplayModal(true);
+      props.setDetail(props.photoInfo.urls.full)  
+    }}/>
     <div className="photo-list__user-details">
 
     <img className="photo-list__user-profile" src={props.photoInfo.user.profile}/>

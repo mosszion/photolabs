@@ -18,6 +18,7 @@ const PhotoList = (props) => {
                   favourites={props.favourites} 
                   toggleFavourite={props.toggleFavourite} 
                   setDisplayModal = {props.setDisplayModal}
+                  setDetail ={props.setDetail}
        
             />
            
