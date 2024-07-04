@@ -33,7 +33,7 @@ const App = () => {
           />
       {displayModal && <PhotoDetailsModal 
           setDisplayModal={setDisplayModal}
-          setDetail = {setDetail}
+         
           detail = {detail}
           
            
