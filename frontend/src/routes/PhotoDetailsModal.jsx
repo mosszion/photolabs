@@ -34,7 +34,7 @@ const PhotoDetailsModal = (props) => {
 
       </div>
       <div>
-        <PhotoList similar ={props.detail.similar_photos}/>
+        <PhotoList photos ={props.detail.similar_photos}/>
       </div>
       
 
