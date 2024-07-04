@@ -7,7 +7,7 @@ import PhotoList from 'components/PhotoList';
 const PhotoDetailsModal = (props) => {
   console.log(props)
 
-  
+  const favourites = []
 
   return (
     <div className="photo-details-modal">
@@ -35,7 +35,10 @@ const PhotoDetailsModal = (props) => {
       </div>
       <div>
         <header>Similar Photos</header>
-        <PhotoList photos ={Object.values (props.detail.similar_photos)}/>
+        <PhotoList 
+        photos ={Object.values (props.detail.similar_photos) }
+        favourites = {favourites}
+      />
       </div>
       
 
