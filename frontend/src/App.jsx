@@ -44,7 +44,8 @@ const App = () => {
           setDisplayModal ={setDisplayModal}
           setDetail={setDetail}
           favourites={favourites}
-          setFavourites = {setFavourites}
+          toggleFavourite = {toggleFavourite}
+         
           />
       {displayModal && <PhotoDetailsModal 
           setDisplayModal={setDisplayModal}
