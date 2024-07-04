@@ -7,32 +7,21 @@ import PhotoList from 'components/PhotoList';
 const HomeRoute = (props) => {
 
  
-  const [favourites, setFavourites] = useState([]);
+  
 
   
-const toggleFavourite = (photoId) => {
- 
-    
-        if (favourites.includes(photoId)) {
-          // Photo is already in favourites, so remove it
-          setFavourites(favourites.filter(id => id !== photoId));
-        } else {
-          // Photo is not in favourites, so add it
-          setFavourites([...favourites,photoId]);
-        }
-        
-  };
+
 
   
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigation  topics = {props.topics} favourites={favourites}/>
+      <TopNavigation  topics = {props.topics} favourites={props.favourites}/>
     
        <PhotoList 
             photos={props.photos} 
-            favourites={favourites}  
-            toggleFavourite={toggleFavourite} 
+            favourites={props.favourites}  
+            toggleFavourite={props.toggleFavourite} 
             setDisplayModal = {props.setDisplayModal}
             setDetail = {props.setDetail}
    

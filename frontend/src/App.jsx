@@ -20,6 +20,19 @@ const App = () => {
 
   const [displayModal, setDisplayModal] = useState(false);
   const [detail, setDetail] = useState(null)
+  const [favourites, setFavourites] = useState([]);
+  const toggleFavourite = (photoId) => {
+ 
+    
+    if (favourites.includes(photoId)) {
+      // Photo is already in favourites, so remove it
+      setFavourites(favourites.filter(id => id !== photoId));
+    } else {
+      // Photo is not in favourites, so add it
+      setFavourites([...favourites,photoId]);
+    }
+    
+};
 
   return (
     <div className="App">
@@ -30,11 +43,15 @@ const App = () => {
           topics= {mockTopicData} 
           setDisplayModal ={setDisplayModal}
           setDetail={setDetail}
+          favourites={favourites}
+          setFavourites = {setFavourites}
           />
       {displayModal && <PhotoDetailsModal 
           setDisplayModal={setDisplayModal}
-         
           detail = {detail}
+          favourites={favourites}
+          toggleFavourite = {toggleFavourite}
+
           
            
       
