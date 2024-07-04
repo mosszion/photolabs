@@ -15,33 +15,57 @@ const useApplicationData = () => {
             
         }
     )
+    console.log("state faourite first:", state.favourites)
 
-    const toggleFavourite = (photoId) => {
+    // const toggleFavourite = (photoId) => {
  
     
-        if (favourites.includes(photoId)) {
-          // Photo is already in favourites, so remove it
-          setState(favourites.filter(id => id !== photoId));
-        } else {
-          // Photo is not in favourites, so add it
-          setState([...favourites,photoId]);
-        }
+    //     if (state.favourites.includes(photoId)) {
+    //       // Photo is already in favourites, so remove it
+    //       setState(state.favourites.filter(id => id !== photoId));
+    //     } else {
+    //       // Photo is not in favourites, so add it
+    //       console.log("second state favourites",[...state.favourites])
+    //       setState([...state.favourites,photoId]);
+    //     }
         
-    };
+    // };
+    const toggleFavourite = (id) => {
+        setState((prevState) => ({
+          ...prevState,
+          favourites: prevState.favourites.includes(id)
+            ? prevState.favourites.filter((photoId) => photoId !== id)
+            : [...prevState.favourites, id],
+        }));
+      };
 
-     const onClosePhotoDetailsModal = () => {
-        setState(prevState => ({
-            ...prevState,
-            displayModal: true,
-          }));
+    //  const onClosePhotoDetailsModal = () => {
+    //     setState(prevState => ({
+    //         ...prevState,
+    //         displayModal: false,
+    //       }));
       
-     }
+    //  }
+    const onClosePhotoDetailsModal = () => {
+        setState((prevState) => ({
+          ...prevState,
+          displayModal: false,
+        }));
+      };
+
+      const onOpenPhotoDetailsModal = () => {
+        setState((prevState) => ({
+          ...prevState,
+          displayModal: true,
+        }));
+      };
 
 
     return {
         state,
         toggleFavourite : toggleFavourite,
         onClosePhotoDetailsModal,
+        onOpenPhotoDetailsModal
      
 
     };
