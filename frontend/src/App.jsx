@@ -53,7 +53,7 @@ const App = () => {
          
           />
       {state.displayModal && <PhotoDetailsModal 
-          setDisplayModal={ onClosePhotoDetailsModal }
+          onClose={ onClosePhotoDetailsModal }
           detail = {state.detail}
           favourites={state.favourites}
           toggleFavourite = {toggleFavourite}
