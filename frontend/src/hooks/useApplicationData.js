@@ -46,20 +46,22 @@ const useApplicationData = () => {
     //       }));
       
     //  }
+    console.log("mosi displayModal", state.displayModal)
+    const dis = {...state.displayModal}
     const onClosePhotoDetailsModal = () => {
         setState((prevState) => ({
           ...prevState,
-          displayModal: false,
+          dis: false,
         }));
       };
 
       const onOpenPhotoDetailsModal = () => {
         setState((prevState) => ({
           ...prevState,
-          displayModal: true,
+          dis: true,
         }));
       };
-
+      console.log(state.displayModal)
 
     return {
         state,

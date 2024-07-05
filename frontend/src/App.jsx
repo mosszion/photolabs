@@ -19,10 +19,10 @@ const App = () => {
   const mockTopicData = [...topics];
   // define display modal state
 
-  const {state, toggleFavourite, onClosePhotoDetailsModal } = useApplicationData();
+  const {state, toggleFavourite, onClosePhotoDetailsModal, onOpenPhotoDetailsModal} = useApplicationData();
 
   // const [displayModal, setDisplayModal] = useState(false);
-  const [detail, setDetail] = useState(null)
+  // const [detail, setDetail] = useState(null)
 //   const [favourites, setFavourites] = useState([]);
 
 
@@ -46,14 +46,14 @@ const App = () => {
       <HomeRoute 
           photos= {mockPhotoData} 
           topics= {mockTopicData} 
-          setDisplayModal ={onClosePhotoDetailsModal}
-          setDetail={setDetail}
+          setDisplayModal ={onOpenPhotoDetailsModal}
+          setDetail={onClosePhotoDetailsModal}
           favourites={state.favourites}
           toggleFavourite = {toggleFavourite}
          
           />
       {state.displayModal && <PhotoDetailsModal 
-          setDisplayModal={onClosePhotoDetailsModal}
+          setDisplayModal={ onClosePhotoDetailsModal }
           detail = {state.detail}
           favourites={state.favourites}
           toggleFavourite = {toggleFavourite}
