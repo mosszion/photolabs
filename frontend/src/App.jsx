@@ -17,27 +17,11 @@ const App = () => {
   
   const mockPhotoData = [...photos];
   const mockTopicData = [...topics];
-  // define display modal state
+
 
   const {state, toggleFavourite, onClosePhotoDetailsModal, onOpenPhotoDetailsModal, onLoadDetail} = useApplicationData();
 
-  // const [displayModal, setDisplayModal] = useState(false);
-  // const [detail, setDetail] = useState(null)
-//   const [favourites, setFavourites] = useState([]);
-
-
-//   const toggleFavourite = (photoId) => {
  
-    
-//     if (favourites.includes(photoId)) {
-//       // Photo is already in favourites, so remove it
-//       setFavourites(favourites.filter(id => id !== photoId));
-//     } else {
-//       // Photo is not in favourites, so add it
-//       setFavourites([...favourites,photoId]);
-//     }
-    
-// };
 
   return (
     <div className="App">
