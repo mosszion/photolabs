@@ -4,8 +4,18 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  console.log(props.setDisplayModal)
+  
   /* Insert React */
+
+  const {setDetail, setDisplayModal, photoInfo} =props;
+  const handleClick = () => {
+   
+          setDisplayModal(),
+          setDetail(photoInfo)
+          
+
+
+  }
   return (
     <div className="photo-list__item" key={props.photoInfo.id}>
       <PhotoFavButton
@@ -17,10 +27,8 @@ const PhotoListItem = (props) => {
       <img
         className="photo-list__image"
         src={props.photoInfo.urls.regular}
-        onClick={() => {
-          props.setDisplayModal;
-          
-        }}
+        onClick={handleClick}
+ 
       />
       <div className="photo-list__user-details">
         <img

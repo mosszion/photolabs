@@ -7,7 +7,7 @@ import PhotoFavButton from 'components/PhotoFavButton';
 import PhotoListItem from 'components/PhotoListItem';
 
 const PhotoDetailsModal = (props) => {
-  console.log(props)
+
 
 
 

@@ -15,21 +15,8 @@ const useApplicationData = () => {
             
         }
     )
-    console.log("state faourite first:", state.favourites)
+  
 
-    // const toggleFavourite = (photoId) => {
- 
-    
-    //     if (state.favourites.includes(photoId)) {
-    //       // Photo is already in favourites, so remove it
-    //       setState(state.favourites.filter(id => id !== photoId));
-    //     } else {
-    //       // Photo is not in favourites, so add it
-    //       console.log("second state favourites",[...state.favourites])
-    //       setState([...state.favourites,photoId]);
-    //     }
-        
-    // };
     const toggleFavourite = (id) => {
         setState((prevState) => ({
           ...prevState,
@@ -39,14 +26,7 @@ const useApplicationData = () => {
         }));
       };
 
-    //  const onClosePhotoDetailsModal = () => {
-    //     setState(prevState => ({
-    //         ...prevState,
-    //         displayModal: false,
-    //       }));
-      
-    //  }
-    console.log("mosi displayModal", state.displayModal)
+    
     
     const onClosePhotoDetailsModal = () => {
         setState((prevState) => ({
@@ -61,13 +41,23 @@ const useApplicationData = () => {
           displayModal: true,
         }));
       };
-      console.log(state.displayModal)
+   
+      const onLoadDetail = (photoInfo) =>{
+        setState( (prevState) => (
+         {
+            ...prevState,
+             detail:photoInfo
+        }))
+
+      }
+      
 
     return {
         state,
         toggleFavourite : toggleFavourite,
         onClosePhotoDetailsModal,
-        onOpenPhotoDetailsModal
+        onOpenPhotoDetailsModal,
+        onLoadDetail
      
 
     };
@@ -76,3 +66,9 @@ const useApplicationData = () => {
 
 
 export default useApplicationData;
+
+
+
+
+
+
