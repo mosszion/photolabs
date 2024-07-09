@@ -12,42 +12,42 @@ const initialState = {
 //Here is the reducer function
 const reducer = (state, action) => {
   switch (action.type) {
-    case "FAV_PHOTO_ADDED":
-      if (!state.favourites.includes(action.payload)) {
-        return {
-          ...state,
-          favourites: [...state.favourites, action.payload],
-        };
-      }
-      return state;
-
-    case "FAV_PHOTO_REMOVED":
+  case "FAV_PHOTO_ADDED":
+    if (!state.favourites.includes(action.payload)) {
       return {
         ...state,
-        favourites: state.favourites.filter(
-          (photoId) => photoId !== action.payload
-        ),
+        favourites: [...state.favourites, action.payload],
       };
+    }
+    return state;
 
-    case "onOpen":
-      return {
-        ...state,
-        displayModal: true,
-      };
+  case "FAV_PHOTO_REMOVED":
+    return {
+      ...state,
+      favourites: state.favourites.filter(
+        (photoId) => photoId !== action.payload
+      ),
+    };
 
-    case "onClose":
-      return {
-        ...state,
-        displayModal: false,
-      };
-    case "onLoad":
-      return {
-        ...state,
-        detail: action.payload,
-      };
+  case "onOpen":
+    return {
+      ...state,
+      displayModal: true,
+    };
 
-    default:
-      return state;
+  case "onClose":
+    return {
+      ...state,
+      displayModal: false,
+    };
+  case "onLoad":
+    return {
+      ...state,
+      detail: action.payload,
+    };
+
+  default:
+    return state;
   }
 };
 

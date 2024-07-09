@@ -27,20 +27,20 @@ const App = () => {
     <div className="App">
    
  
-      <HomeRoute 
-          photos= {mockPhotoData} 
-          topics= {mockTopicData} 
-          setDisplayModal ={onOpenPhotoDetailsModal}
-          setDetail={ onLoadDetail }
-          favourites={state.favourites}
-          toggleFavourite = {toggleFavourite}
+      <HomeRoute
+        photos= {mockPhotoData}
+        topics= {mockTopicData}
+        setDisplayModal ={onOpenPhotoDetailsModal}
+        setDetail={ onLoadDetail }
+        favourites={state.favourites}
+        toggleFavourite = {toggleFavourite}
          
-          />
-      {state.displayModal && <PhotoDetailsModal 
-          setDisplayModal={ onClosePhotoDetailsModal  }
-          detail = {state.detail}
-          favourites={state.favourites}
-          toggleFavourite = {toggleFavourite}
+      />
+      {state.displayModal && <PhotoDetailsModal
+        setDisplayModal={ onClosePhotoDetailsModal  }
+        detail = {state.detail}
+        favourites={state.favourites}
+        toggleFavourite = {toggleFavourite}
 
           
            

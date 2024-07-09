@@ -7,15 +7,15 @@ const PhotoListItem = (props) => {
   
   /* Insert React */
 
-  const {setDetail, setDisplayModal, photoInfo} =props;
+  const {setDetail, setDisplayModal, photoInfo} = props;
   const handleClick = () => {
    
-          setDisplayModal(),
-          setDetail(photoInfo)
+    setDisplayModal(),
+    setDetail(photoInfo);
           
 
 
-  }
+  };
   return (
     <div className="photo-list__item" key={props.photoInfo.id}>
       <PhotoFavButton

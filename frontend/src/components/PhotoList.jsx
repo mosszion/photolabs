@@ -10,21 +10,22 @@ const PhotoList = (props) => {
  
 
 
-  const multiPhotoInfos =props.photos.map((photoInfo) => {
+  const multiPhotoInfos = props.photos.map((photoInfo) => {
     return (
-            <PhotoListItem 
-                  key = {photoInfo.id} 
-                  photoInfo={photoInfo} 
-                  favourites={props.favourites} 
-                  toggleFavourite={props.toggleFavourite} 
-                  setDisplayModal = {props.setDisplayModal}
-                  setDetail ={props.setDetail}
+      <PhotoListItem
+        key = {photoInfo.id}
+        photoInfo={photoInfo}
+        favourites={props.favourites}
+        toggleFavourite={props.toggleFavourite}
+        setDisplayModal = {props.setDisplayModal}
+        setDetail ={props.setDetail}
        
-            />
+      />
            
           
 
-  )})
+    );
+  });
   return (
     <ul className="photo-list">
       {/* Insert React */}

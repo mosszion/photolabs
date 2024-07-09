@@ -12,8 +12,8 @@ const TopicList = (props) => {
   const multiTopicList = props.topics.map((topic) => {
     return (
       < TopicListItem key = {topic.id} topic = {topic} />
-    )
-  })
+    );
+  });
   
 
   return (

@@ -18,14 +18,14 @@ const HomeRoute = (props) => {
       {/* Insert React */}
       <TopNavigation  topics = {props.topics} favourites={props.favourites}/>
     
-       <PhotoList 
-            photos={props.photos} 
-            favourites={props.favourites}  
-            toggleFavourite={props.toggleFavourite} 
-            setDisplayModal = {props.setDisplayModal}
-            setDetail = {props.setDetail}
-   
-       />
+      <PhotoList
+        photos={props.photos}
+        favourites={props.favourites}
+        toggleFavourite={props.toggleFavourite}
+        setDisplayModal = {props.setDisplayModal}
+        setDetail = {props.setDetail}
+
+      />
     </div>
   );
 };
