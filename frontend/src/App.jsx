@@ -15,8 +15,8 @@ import useApplicationData from 'hooks/useApplicationData';
 
 const App = () => {
   
-  const mockPhotoData = [...photos];
-  const mockTopicData = [...topics];
+  // const mockPhotoData = [...photos];
+  // const mockTopicData = [...topics];
 
 
   const {state, toggleFavourite, onClosePhotoDetailsModal, onOpenPhotoDetailsModal, onLoadDetail} = useApplicationData();
@@ -28,8 +28,8 @@ const App = () => {
    
  
       <HomeRoute
-        photos= {mockPhotoData}
-        topics= {mockTopicData}
+        photos= {state.photoData}
+        topics= {state.topicData}
         setDisplayModal ={onOpenPhotoDetailsModal}
         setDetail={ onLoadDetail }
         favourites={state.favourites}

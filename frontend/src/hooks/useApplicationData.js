@@ -1,17 +1,29 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
-
+import photos from 'mocks/photos';
+import topics from 'mocks/topics';
 //Initial State is here
 //state object containing the entire state of the application
 const initialState = {
   displayModal: false,
   detail: null,
   favourites: [],
+  photoData:[],
+  topicData:[]
 };
+
+  
+
 
 //Here is the reducer function
 const reducer = (state, action) => {
   switch (action.type) {
+  case 'SET_PHOTO_DATA':
+    return {...state, photoData: action.payload};
+
+  case 'SET_TOPIC_DATA':
+    return {...state, topicData: action.payload};
+
   case "FAV_PHOTO_ADDED":
     if (!state.favourites.includes(action.payload)) {
       return {
@@ -52,9 +64,22 @@ const reducer = (state, action) => {
 };
 
 const useApplicationData = () => {
+  
+  
   //useReducer called here
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  //fetching the photo data here
+  useEffect(()=> {
+    fetch('http://localhost:8001/api/photos')
+      .then(response => response.json())
+      .then(data => dispatch({type: "SET_PHOTO_DATA", payload: data }));
+  },[]);
+  useEffect(()=> {
+    fetch('http://localhost:8001/api/topics')
+      .then(response => response.json())
+      .then(data => dispatch({type: "SET_TOPIC_DATA", payload: data }));
+  },[]);
+  
   const FAV_PHOTO_ADDED = (id) => {
     dispatch({ type: "FAV_PHOTO_ADDED", payload: id });
   };
@@ -70,7 +95,7 @@ const useApplicationData = () => {
   const onLoadDetail = (photoInfo) => {
     dispatch({ type: "onLoad", payload: photoInfo });
   };
-//Logic of photo add or remove combined into toggleFavorite function
+  //Logic of photo add or remove combined into toggleFavorite function
   const toggleFavourite = (id) => {
     if (state.favourites.includes(id)) {
       FAV_PHOTO_REMOVED(id);
@@ -87,6 +112,8 @@ const useApplicationData = () => {
     onClosePhotoDetailsModal,
     onOpenPhotoDetailsModal,
     onLoadDetail,
+    photoData:state.photoData,
+    topicData: state.topicData
   };
 };
 
