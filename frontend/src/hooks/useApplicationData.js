@@ -10,7 +10,7 @@ const initialState = {
   favourites: [],
   photoData:[],
   topicData:[],
-  currentTopicId: null
+  topicId: null
 };
 
   
@@ -26,7 +26,7 @@ const reducer = (state, action) => {
     return {...state, topicData: action.payload};
   
   case 'SET_CURRENT_TOPIC':
-    return {...state, currentTopicId: action.payload};
+    return {...state, topicId: action.payload};
 
   case "FAV_PHOTO_ADDED":
     if (!state.favourites.includes(action.payload)) {
@@ -74,19 +74,20 @@ const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   //fetching the photo data by topic id
   useEffect(()=> {
-    if (state.currentTopicId) {
-      fetch(`http://localhost:8001/api/topics/photos/${state.currentTopicId}`)
+    if (state.topicId) {
+      fetch(`http://localhost:8001/api/topics/photos/${state.topicId}`)
         .then(response => response.json())
         .then(data => dispatch({type: "SET_PHOTO_DATA", payload: data }))
         .catch(error => console.error('Error fetching photos by topics:', error));
 
     }
-  },[state.currentTopicId]);
+  },[state.topicId]);
   //fetch the topic data here
   useEffect(()=> {
     fetch('http://localhost:8001/api/topics')
       .then(response => response.json())
-      .then(data => dispatch({type: "SET_TOPIC_DATA", payload: data }));
+      .then(data => dispatch({type: "SET_TOPIC_DATA", payload: data }))
+      .catch(error => console.error("Error fetching topics:", error));
   },[]);
 
   

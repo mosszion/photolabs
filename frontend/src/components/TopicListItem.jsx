@@ -4,11 +4,11 @@ import "../styles/TopicListItem.scss";
 
 
 
-const TopicListItem = ({topic}) => {
+const TopicListItem = (props) => {
   return (
-    <div className="topic-list__item">
+    <div className="topic-list__item" onClick = {props.onClick}>
       {/* Insert React */}
-      {topic.title}
+      {props.topic.title}
 
     </div>
   );

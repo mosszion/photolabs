@@ -16,7 +16,10 @@ const HomeRoute = (props) => {
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigation  topics = {props.topics} favourites={props.favourites}/>
+      <TopNavigation  
+            topics = {props.topics} 
+            favourites={props.favourites} 
+            setTopic = {props.setTopic}/>
     
       <PhotoList
         photos={props.photos}
@@ -24,6 +27,7 @@ const HomeRoute = (props) => {
         toggleFavourite={props.toggleFavourite}
         setDisplayModal = {props.setDisplayModal}
         setDetail = {props.setDetail}
+        
 
       />
     </div>

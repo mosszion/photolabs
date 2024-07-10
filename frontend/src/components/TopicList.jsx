@@ -7,11 +7,12 @@ import TopicListItem from "./TopicListItem";
 
 const TopicList = (props) => {
   
-  
-
   const multiTopicList = props.topics.map((topic) => {
     return (
-      < TopicListItem key = {topic.id} topic = {topic} />
+      < TopicListItem
+        key = {topic.id}
+        topic = {topic}
+        onClick = {() => props.setTopic(topic.id)}/>
     );
   });
   
