@@ -19,7 +19,7 @@ const App = () => {
   // const mockTopicData = [...topics];
 
 
-  const {state, toggleFavourite, onClosePhotoDetailsModal, onOpenPhotoDetailsModal, onLoadDetail} = useApplicationData();
+  const {state, setTopic, toggleFavourite, onClosePhotoDetailsModal, onOpenPhotoDetailsModal, onLoadDetail} = useApplicationData();
 
  
 
@@ -34,6 +34,7 @@ const App = () => {
         setDetail={ onLoadDetail }
         favourites={state.favourites}
         toggleFavourite = {toggleFavourite}
+        setTopic = {setTopic}
          
       />
       {state.displayModal && <PhotoDetailsModal
