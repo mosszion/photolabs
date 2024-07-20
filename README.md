@@ -27,10 +27,10 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
-# Setup the DB
+### Setup the DB
  * Use 'psql -U labber' to login with password 'labber'
  * Create a DataBase with`CREATE DATABASE photolabs_development;`
- * Use the env variables as follows
+ * Use the environment variables as follows
       ```
     PGHOST=localhost
     PGUSER=labber
@@ -38,7 +38,7 @@ npm start
     PGPASSWORD=labber
     PGPORT=5432
     ```
-# Seeding 
+### Seeding 
  * To reset/populate data into the DB, make a 'GET' request to `http://localhost:8001/api/debug/reset`
 
 ## PhotoLabs Snippets
