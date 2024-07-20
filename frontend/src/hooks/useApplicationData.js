@@ -89,6 +89,13 @@ const useApplicationData = () => {
       .then(data => dispatch({type: "SET_TOPIC_DATA", payload: data }))
       .catch(error => console.error("Error fetching topics:", error));
   },[]);
+  //fetch the photo data on page load
+  useEffect(()=> {
+    fetch('http://localhost:8001/api/photos')
+      .then(response => response.json())
+      .then(data => dispatch({type: "SET_PHOTO_DATA", payload: data }))
+      .catch(error => console.error("Error fetching topics:", error));
+  },[]);
 
   
   
