@@ -10,6 +10,8 @@ PhotoLabs is a simple stock photo application - specifically a React-based singl
 
 Install dependencies with `npm install` in each respective `/frontend` and `/backend`.
 
+Both servers have to run together. The frontend will run on 'localhost://3000' while the backend will run on 'localhost://8001'.
+
 ## [Frontend] Running Webpack Development Server
 
 ```sh
@@ -25,6 +27,20 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+# Setup the DB
+ * Use 'psql -U labber' to login with password 'labber'
+ * Create a DataBase with`CREATE DATABASE photolabs_development;`
+ * Use the env variables as follows
+      ```
+    PGHOST=localhost
+    PGUSER=labber
+    PGDATABASE=photolabs_development
+    PGPASSWORD=labber
+    PGPORT=5432
+    ```
+# Seeding 
+ * To reset/populate data into the DB, make a 'GET' request to `http://localhost:8001/api/debug/reset`
+
 ## PhotoLabs Snippets
  !['PhotoLabs OverView'](https://github.com/mosszion/photolabs/blob/main/doc/PhotoLabOverview.png)
  !['Navigation Bar](https://github.com/mosszion/photolabs/blob/main/doc/NavigationBar.png)
