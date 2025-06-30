@@ -66,7 +66,7 @@ const reducer = (state, action) => {
     return state;
   }
 };
-
+const API = process.env.REACT_APP_API_BASE_URL;
 const useApplicationData = () => {
   
   
@@ -75,7 +75,7 @@ const useApplicationData = () => {
   //fetching the photo data by topic id
   useEffect(()=> {
     if (state.topicId) {
-      fetch(`http://localhost:8001/api/topics/photos/${state.topicId}`)
+      fetch(`${API}/api/topics/photos/${state.topicId}`)
         .then(response => response.json())
         .then(data => dispatch({type: "SET_PHOTO_DATA", payload: data }))
         .catch(error => console.error('Error fetching photos by topics:', error));
@@ -84,14 +84,14 @@ const useApplicationData = () => {
   },[state.topicId]);
   //fetch the topic data here
   useEffect(()=> {
-    fetch('http://localhost:8001/api/topics')
+    fetch(`${API}/api/topics`)
       .then(response => response.json())
       .then(data => dispatch({type: "SET_TOPIC_DATA", payload: data }))
       .catch(error => console.error("Error fetching topics:", error));
   },[]);
   //fetch the photo data on page load
   useEffect(()=> {
-    fetch('http://localhost:8001/api/photos')
+    fetch(`${API}/api/photos`)
       .then(response => response.json())
       .then(data => dispatch({type: "SET_PHOTO_DATA", payload: data }))
       .catch(error => console.error("Error fetching topics:", error));
