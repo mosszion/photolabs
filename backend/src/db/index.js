@@ -3,7 +3,7 @@ dotenv.config({ path: "./.env" });
 
 const pg = require("pg");
 
-console.log(process.env.DATABASE_URL);
+
 const client = new pg.Client({
   connectionString: process.env.DATABASE_URL,
   ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
